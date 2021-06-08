@@ -1,0 +1,35 @@
+INSERT INTO CONTAS_RECEBER(
+	VALORRECEBER,
+    DATARECEBER,
+    DETALHAMENTORECEBER,
+    VERIFRECEBER,
+    IDEMPRESA
+)
+VALUES(
+	500,
+    'teste',
+    'teste',
+    0,
+    1
+),
+(
+	500,
+    'teste1',
+    'teste1',
+    0,
+    1
+),
+(
+	500,
+    'teste2',
+    'teste2',
+    0,
+    1
+),
+(
+	500,
+    'teste3',
+    'teste3',
+    0,
+    1
+);
