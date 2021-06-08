@@ -1,0 +1,66 @@
+INSERT INTO CLIENTES(
+	NOMECLIENTE,
+	DTANASCCLIENTE,
+    EMAILCLIENTE,
+    CPFCLIENTE,
+    CIDADECLIENTE,
+    RUACLIENTE,
+    BAIRROCLIENTE,
+    NUMCASACLIENTE,
+    CONTATOCLIENTE,
+    COMPLCLIENTE,
+    IDEMPRESA
+)
+VALUES
+(
+	'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    1
+),
+(
+	'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    1
+),
+(
+	'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    1
+),
+(
+	'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    1
+);

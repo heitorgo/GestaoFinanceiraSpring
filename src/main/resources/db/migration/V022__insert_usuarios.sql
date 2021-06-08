@@ -1,0 +1,21 @@
+INSERT INTO USUARIOS(
+    LOGIN,
+    SENHA
+)
+VALUES
+(
+    'teste',
+    'teste'
+),
+(
+    'teste1',
+    'teste1'
+),
+(
+    'teste2',
+    'teste2'
+),
+(
+    'teste3',
+    'teste3'
+);

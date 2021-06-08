@@ -1,0 +1,46 @@
+INSERT INTO EMPRESAS(
+	IDEMPRESA,
+	NOMEEMPRESA,
+    EMAILEMPRESA,
+    CONTATOEMPRESA,
+    CIDADEEMPRESA,
+    RUAEMPRESA,
+    NUMEMPRESA
+)
+VALUES
+(
+	1,
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste',
+    'teste'
+),
+(
+	2,
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1',
+    'teste1'
+),
+(
+	3,
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2'
+),
+(
+	4,
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3',
+    'teste3'
+);
