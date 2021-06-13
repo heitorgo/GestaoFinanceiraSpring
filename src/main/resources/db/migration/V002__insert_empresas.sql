@@ -1,5 +1,4 @@
 INSERT INTO EMPRESAS(
-	IDEMPRESA,
 	NOMEEMPRESA,
     EMAILEMPRESA,
     CONTATOEMPRESA,
@@ -9,7 +8,6 @@ INSERT INTO EMPRESAS(
 )
 VALUES
 (
-	1,
     'teste',
     'teste',
     'teste',
@@ -18,7 +16,6 @@ VALUES
     'teste'
 ),
 (
-	2,
     'teste1',
     'teste1',
     'teste1',
@@ -27,7 +24,6 @@ VALUES
     'teste1'
 ),
 (
-	3,
     'teste2',
     'teste2',
     'teste2',
@@ -36,7 +32,6 @@ VALUES
     'teste2'
 ),
 (
-	4,
     'teste3',
     'teste3',
     'teste3',
