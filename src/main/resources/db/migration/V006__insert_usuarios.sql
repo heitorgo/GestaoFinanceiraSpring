@@ -1,6 +1,6 @@
-INSERT INTO USUARIOS(
-    LOGIN,
-    SENHA
+INSERT INTO usuarios(
+    email_usuario,
+    senha_usuario
 )
 VALUES
 (

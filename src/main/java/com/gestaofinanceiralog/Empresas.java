@@ -19,12 +19,12 @@ public class Empresas {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDEMPRESA;
-	private String NOMEEMPRESA;
-	private String EMAILEMPRESA;
-	private String CONTATOEMPRESA;
-	private String CIDADEEMPRESA;
-	private String RUAEMPRESA;
-	private String NUMEMPRESA;
+	private Long id_empresa;
+	private String nome_empresa;
+	private String email_empresa;
+	private String telefone_empresa;
+	private String cidade_empresa;
+	private String rua_empresa;
+	private String num_empresa;
 	
 }

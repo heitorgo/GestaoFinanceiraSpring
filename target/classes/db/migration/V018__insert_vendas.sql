@@ -1,9 +1,9 @@
-INSERT INTO VENDAS(
-	VALORVENDA,
-    DATAVENDA,
-    DETALHAMENTOVENDA,
-    VERIFVENDA,
-    IDEMPRESA
+INSERT INTO vendas(
+	valor_venda,
+    data_venda,
+    detalhamento_venda,
+    verif_venda,
+    id_empresa
 )
 VALUES(
 	500,

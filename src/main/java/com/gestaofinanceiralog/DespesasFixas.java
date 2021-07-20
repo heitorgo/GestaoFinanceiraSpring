@@ -18,11 +18,11 @@ public class DespesasFixas {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDDESPESAFIXA;
-	private Float VALORDESPESAFIXA;
-	private String FREQUENCIADESPESA;
-	private String DETALHAMENTODESPESAFIXA;
-	private Boolean VERIFDESPESAFIXA;
-	private Long IDEMPRESA;
+	private Long id_despesa_fixa;
+	private Float valor_despesa_fixa;
+	private String frequencia_despesa;
+	private String detalhamento_despesa_fixa;
+	private Boolean verif_despesa_fixa;
+	private Long id_empresa;
 
 }

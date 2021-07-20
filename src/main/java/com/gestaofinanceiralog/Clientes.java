@@ -18,17 +18,16 @@ public class Clientes {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDCLIENTE;
-	private String NOMECLIENTE;
-	private String DTANASCCLIENTE;
-	private String EMAILCLIENTE;
-	private String CPFCLIENTE;
-	private String CIDADECLIENTE;
-	private String RUACLIENTE;
-	private String BAIRROCLIENTE;
-	private String NUMCASACLIENTE;
-	private String CONTATOCLIENTE;
-	private String COMPLCLIENTE;
-	private Long IDEMPRESA;
+	private Long id_cliente;
+	private String nome_cliente;
+	private String dtanasc_cliente;
+	private String email_cliente;
+	private String cpf_cliente;
+	private String cidade_cliente;
+	private String rua_cliente;
+	private String bairro_cliente;
+	private String numcasa_cliente;
+	private String telefone_cliente;
+	private Long id_empresa;
 	
 }

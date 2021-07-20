@@ -1,20 +1,18 @@
-INSERT INTO CLIENTES(
-	NOMECLIENTE,
-	DTANASCCLIENTE,
-    EMAILCLIENTE,
-    CPFCLIENTE,
-    CIDADECLIENTE,
-    RUACLIENTE,
-    BAIRROCLIENTE,
-    NUMCASACLIENTE,
-    CONTATOCLIENTE,
-    COMPLCLIENTE,
-    IDEMPRESA
+INSERT INTO clientes(
+	nome_cliente,
+	dtanasc_cliente,
+    email_cliente,
+    cpf_cliente,
+    cidade_cliente,
+    rua_cliente,
+    bairro_cliente,
+    numcasa_cliente,
+    telefone_cliente,
+    id_empresa
 )
 VALUES
 (
 	'teste',
-    'teste',
     'teste',
     'teste',
     'teste',
@@ -35,7 +33,6 @@ VALUES
     'teste1',
     'teste1',
     'teste1',
-    'teste1',
     1
 ),
 (
@@ -48,12 +45,10 @@ VALUES
     'teste2',
     'teste2',
     'teste2',
-    'teste2',
     1
 ),
 (
 	'teste3',
-    'teste3',
     'teste3',
     'teste3',
     'teste3',

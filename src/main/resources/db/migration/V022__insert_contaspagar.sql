@@ -1,9 +1,9 @@
 INSERT INTO CONTAS_PAGAR(
-	VALORPAGAR,
-    DATAPAGAR,
-    DETALHAMENTOPAGAR,
-    VERIFPAGAR,
-    IDEMPRESA
+	valor_pagar,
+    data_pagar,
+    detalhamento_pagar,
+    verif_pagar,
+    id_empresa
 )
 VALUES(
 	500,

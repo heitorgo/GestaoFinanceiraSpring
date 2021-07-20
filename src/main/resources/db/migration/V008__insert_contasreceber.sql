@@ -1,9 +1,9 @@
-INSERT INTO CONTAS_RECEBER(
-	VALORRECEBER,
-    DATARECEBER,
-    DETALHAMENTORECEBER,
-    VERIFRECEBER,
-    IDEMPRESA
+INSERT INTO contas_receber(
+	valor_receber,
+    data_receber,
+    detalhamento_receber,
+    verif_receber,
+    id_empresa
 )
 VALUES(
 	500,

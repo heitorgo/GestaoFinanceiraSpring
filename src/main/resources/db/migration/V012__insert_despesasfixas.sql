@@ -1,9 +1,9 @@
-INSERT INTO DESPESAS_FIXAS(
-	VALORDESPESAFIXA,
-    FREQUENCIADESPESA,
-    DETALHAMENTODESPESAFIXA,
-    VERIFDESPESAFIXA,
-    IDEMPRESA
+INSERT INTO despesas_fixas(
+	valor_despesa_fixa,
+    frequencia_despesa,
+    detalhamento_despesa_fixa,
+    verif_despesa_fixa,
+    id_empresa
 )
 VALUES(
 	500,

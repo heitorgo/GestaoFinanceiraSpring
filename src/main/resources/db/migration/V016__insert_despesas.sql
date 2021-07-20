@@ -1,9 +1,9 @@
-INSERT INTO DESPESAS(
-	VALORDESPESA,
-    DATADESPESA,
-    DETALHAMENTODESPESA,
-    VERIFDESPESA,
-    IDEMPRESA
+INSERT INTO despesas(
+	valor_despesa,
+    data_despesa,
+    detalhamento_despesa,
+    verif_despesa,
+    id_empresa
 )
 VALUES(
 	500,

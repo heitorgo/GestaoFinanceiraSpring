@@ -18,11 +18,11 @@ public class ContasReceber {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDRECEBER;
-	private Float VALORRECEBER;
-	private String DATARECEBER;
-	private String DETALHAMENTORECEBER;
-	private Boolean VERIFRECEBER;
-	private Long IDEMPRESA;
+	private Long id_receber;
+	private Float valor_receber;
+	private String data_receber;
+	private String detalhamento_receber;
+	private Boolean verif_receber;
+	private Long id_empresa;
 
 }

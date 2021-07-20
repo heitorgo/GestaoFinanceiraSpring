@@ -18,11 +18,11 @@ public class CustosFixos {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDCUSTOFIXO;
-	private Float VALORCUSTOFIXO;
-	private String FREQUENCIACUSTO;
-	private String DETALHAMENTOCUSTOFIXO;
-	private Boolean VERIFCUSTOFIXO;
-	private Long IDEMPRESA;
+	private Long id_custo_fixo;
+	private Float valor_custo_fixo;
+	private String frequencia_custo;
+	private String detalhamento_custo_fixo;
+	private Boolean verif_custo_fixo;
+	private Long id_empresa;
 
 }

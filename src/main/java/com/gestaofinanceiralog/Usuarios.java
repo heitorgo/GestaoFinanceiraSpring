@@ -18,8 +18,8 @@ public class Usuarios {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ID_USUARIO;
-	private String LOGIN;
-	private String SENHA;
+	private Long id_usuario;
+	private String email_usuario;
+	private String senha_usuario;
 
 }

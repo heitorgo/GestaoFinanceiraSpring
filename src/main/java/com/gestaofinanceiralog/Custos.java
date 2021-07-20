@@ -18,11 +18,11 @@ public class Custos {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDCUSTO;
-	private Float VALORCUSTO;
-	private String DATACUSTO;
-	private String DETALHAMENTOCUSTO;
-	private Boolean VERIFCUSTO;
-	private Long IDEMPRESA;
+	private Long id_custo;
+	private Float valor_custo;
+	private String data_custo;
+	private String detalhamento_custo;
+	private Boolean verif_custo;
+	private Long id_empresa;
 
 }

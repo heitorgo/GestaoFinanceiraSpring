@@ -3,6 +3,7 @@ package com.gestaofinanceiralog;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,46 +18,35 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/contareceber")
+@RequestMapping("/contasreceber")
+@CrossOrigin(origins = "*")
 public class ContasReceberController {
 	
 	private ContasReceberRepository contasReceberRepository;
 	
 	//APRESENTANDO TODOS OS REGISTROS DE CONTAS RECEBER
-	@GetMapping
-	public List<ContasReceber> listarcontasreceber(){
+	@GetMapping(path="/all")
+	public @ResponseBody List<ContasReceber> listarcontasreceber(){
 			
 		return contasReceberRepository.findAll();
 			
 	}
 	// ADICIONAR CONTAS RECEBER
 	@PostMapping(path="/add")
-	public @ResponseBody String novaContaReceber (@RequestParam Float VALORRECEBER, @RequestParam String DATARECEBER, @RequestParam String DETALHAMENTORECEBER, @RequestParam Boolean VERIFRECEBER, @RequestParam Long IDEMPRESA) {
-		ContasReceber receber = new ContasReceber();
-		receber.setVALORRECEBER(VALORRECEBER);
-		receber.setDATARECEBER(DATARECEBER);
-		receber.setDETALHAMENTORECEBER(DETALHAMENTORECEBER);
-		receber.setVERIFRECEBER(VERIFRECEBER);
-		receber.setIDEMPRESA(IDEMPRESA);
-		contasReceberRepository.save(receber);
-		return "Valores salvos com sucesso";
-	}
-	
-	@PostMapping(path="/add_contareceber")
 	public @ResponseBody String novoContasReceber (@RequestBody ContasReceber novacontareceber) {
 		contasReceberRepository.save(novacontareceber);
 		return "Conta Receber inserida com sucesso";
 	}
 	// LOCALIZAR CONTAS RECEBER
-	@GetMapping(path ="/locate_contareceber/{idcontareceber}")
-	public @ResponseBody Optional<ContasReceber> retornaContaReceber (@PathVariable(required = true,name="idcontareceber")
-	Long idcontareceber){
-		return contasReceberRepository.findById(idcontareceber);
+	@GetMapping(path ="/locate/{id_receber}")
+	public @ResponseBody Optional<ContasReceber> retornaContaReceber (@PathVariable(required = true,name="id_receber")
+	Long id_receber){
+		return contasReceberRepository.findById(id_receber);
 	}
 	// DELETANDO CONTAS RECEBER
-	@DeleteMapping(path ="delete_contareceber{idcontareceber}")
-	public @ResponseBody String deleteContasReceber (@PathVariable(required = true, name="idcontareceber") Long idcontareceber) {
-		Optional<ContasReceber> contareceber = contasReceberRepository.findById(idcontareceber);
+	@DeleteMapping(path ="/delete/{id_receber}")
+	public @ResponseBody String deleteContasReceber (@PathVariable(required = true, name="id_receber") Long id_receber) {
+		Optional<ContasReceber> contareceber = contasReceberRepository.findById(id_receber);
 		if (contareceber.isPresent()) {
 			contasReceberRepository.delete(contareceber.get());
 			return "Conta Receber deletada com sucesso";
@@ -65,16 +54,16 @@ public class ContasReceberController {
 		return "Conta Receber não encontrado";
 	}
 	//ATUALIZANDO CONTA RECEBER
-	@PutMapping(path="update_contareceber/{idcontareceber}")
-	public @ResponseBody Optional<ContasReceber> updateContasReceber (@PathVariable(required = true, name = "idcontareceber") Long idcontareceber, 
+	@PutMapping(path="/update/{id_receber}")
+	public @ResponseBody Optional<ContasReceber> updateContasReceber (@PathVariable(required = true, name = "id_receber") Long id_receber, 
 			@RequestBody ContasReceber contareceber){
-		Optional<ContasReceber> cr = contasReceberRepository.findById(idcontareceber);
+		Optional<ContasReceber> cr = contasReceberRepository.findById(id_receber);
 		if(cr.isPresent()) {
-			cr.get().setVALORRECEBER(contareceber.getVALORRECEBER());
-			cr.get().setDATARECEBER(contareceber.getDATARECEBER());
-			cr.get().setDETALHAMENTORECEBER(contareceber.getDETALHAMENTORECEBER());
-			cr.get().setVERIFRECEBER(contareceber.getVERIFRECEBER());
-			cr.get().setIDEMPRESA(contareceber.getIDEMPRESA());
+			cr.get().setValor_receber(contareceber.getValor_receber());
+			cr.get().setData_receber(contareceber.getData_receber());
+			cr.get().setDetalhamento_receber(contareceber.getDetalhamento_receber());
+			cr.get().setVerif_receber(contareceber.getVerif_receber());
+			cr.get().setId_empresa(contareceber.getId_empresa());
 			contasReceberRepository.save(cr.get());
 			return cr;
 		}

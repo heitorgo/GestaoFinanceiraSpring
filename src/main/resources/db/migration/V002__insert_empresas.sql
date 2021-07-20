@@ -1,10 +1,10 @@
-INSERT INTO EMPRESAS(
-	NOMEEMPRESA,
-    EMAILEMPRESA,
-    CONTATOEMPRESA,
-    CIDADEEMPRESA,
-    RUAEMPRESA,
-    NUMEMPRESA
+INSERT INTO empresas(
+	nome_empresa,
+    email_empresa,
+    telefone_empresa,
+    cidade_empresa,
+    rua_empresa,
+    num_empresa
 )
 VALUES
 (

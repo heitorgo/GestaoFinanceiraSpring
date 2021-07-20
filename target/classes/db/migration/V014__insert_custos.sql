@@ -1,9 +1,9 @@
-INSERT INTO CUSTOS(
-	VALORCUSTO,
-    DATACUSTO,
-    DETALHAMENTOCUSTO,
-    VERIFCUSTO,
-    IDEMPRESA
+INSERT INTO custos(
+	valor_custo,
+    data_custo,
+    detalhamento_custo,
+    verif_custo,
+    id_empresa
 )
 VALUES(
 	500,

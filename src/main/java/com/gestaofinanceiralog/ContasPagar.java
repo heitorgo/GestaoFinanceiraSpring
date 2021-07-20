@@ -18,11 +18,11 @@ public class ContasPagar {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDPAGAR;
-	private Float VALORPAGAR;
-	private String DATAPAGAR;
-	private String DETALHAMENTOPAGAR;
-	private Boolean VERIFPAGAR;
-	private Long IDEMPRESA;
+	private Long id_pagar;
+	private Float valor_pagar;
+	private String data_pagar;
+	private String detalhamento_pagar;
+	private Boolean verif_pagar;
+	private Long id_empresa;
 	
 }

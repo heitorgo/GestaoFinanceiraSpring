@@ -1,9 +1,9 @@
-INSERT INTO PRESTACAO_SERVICOS(
-	VALORSERVICO,
-    DATASERVICO,
-    DETALHAMENTOSERVICO,
-    VERIFSERVICO,
-    IDEMPRESA
+INSERT INTO prestacao_servicos(
+	valor_servico,
+    data_servico,
+    detalhamento_servico,
+    verif_servico,
+    id_empresa
 )
 VALUES(
 	500,

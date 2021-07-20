@@ -18,11 +18,11 @@ public class Vendas {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDVENDA;
-	private Float VALORVENDA;
-	private String DATAVENDA;
-	private String DETALHAMENTOVENDA;
-	private Boolean VERIFVENDA;
-	private Long IDEMPRESA;
+	private Long id_venda;
+	private Float valor_venda;
+	private String data_venda;
+	private String detalhamento_venda;
+	private Boolean verif_venda;
+	private Long id_empresa;
 
 }

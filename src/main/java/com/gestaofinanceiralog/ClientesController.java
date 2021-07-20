@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,41 +30,22 @@ public class ClientesController {
 			
 	}
 	// ADICIONANDO CLIENTE
-	@PostMapping(path="/add")
-	public @ResponseBody String novoCliente (@RequestParam String NOMECLIENTE, @RequestParam String DTANASCCLIENTE, @RequestParam String EMAILCLIENTE, @RequestParam String CPFCLIENTE, 
-			@RequestParam String CIDADECLIENTE, @RequestParam String RUACLIENTE, @RequestParam String BAIRROCLIENTE, @RequestParam String NUMCASACLIENTE, @RequestParam String CONTATOCLIENTE, 
-			@RequestParam String COMPLCLIENTE, @RequestParam Long IDEMPRESA) {
-		Clientes cliente = new Clientes();
-		cliente.setNOMECLIENTE(NOMECLIENTE);
-		cliente.setDTANASCCLIENTE(DTANASCCLIENTE);
-		cliente.setEMAILCLIENTE(EMAILCLIENTE);
-		cliente.setCPFCLIENTE(CPFCLIENTE);
-		cliente.setCIDADECLIENTE(CIDADECLIENTE);
-		cliente.setRUACLIENTE(RUACLIENTE);
-		cliente.setBAIRROCLIENTE(BAIRROCLIENTE);
-		cliente.setNUMCASACLIENTE(NUMCASACLIENTE);
-		cliente.setCONTATOCLIENTE(CONTATOCLIENTE);
-		cliente.setCOMPLCLIENTE(COMPLCLIENTE);
-		cliente.setIDEMPRESA(IDEMPRESA);
-		clientesRepository.save(cliente);
-		return "Valores salvos com sucesso";
-	}
 	
-	@PostMapping(path="/add_cliente")
+	@PostMapping(path="/add")
 	public @ResponseBody String novoCliente (@RequestBody Clientes novocliente) {
 		clientesRepository.save(novocliente);
 		return "Cliente inserido com sucesso";
 	}
 	// LOCALIZAR CLIENTES
-	@GetMapping(path ="/locate_cliente/{idcliente}")
-	public @ResponseBody Optional<Clientes> retornaCliente (@PathVariable(required = true,name="idcliente")
-	Long idcliente){
-		return clientesRepository.findById(idcliente);
+	@GetMapping(path ="/locate/{id_cliente}")
+	public @ResponseBody Optional<Clientes> retornaCliente (@PathVariable(required = true,name="id_cliente")
+	Long id_cliente){
+		return clientesRepository.findById(id_cliente);
 	}
 	// DELETANDO CLIENTES
-	@DeleteMapping(path ="delete_cliente{idcliente}")
-	public @ResponseBody String deleteCliente (@PathVariable(required = true, name="idcliente") Long idcliente) {
-		Optional<Clientes> cliente = clientesRepository.findById(idcliente);
+	@DeleteMapping(path ="/delete/{id_cliente}")
+	public @ResponseBody String deleteCliente (@PathVariable(required = true, name="id_cliente") Long id_cliente) {
+		Optional<Clientes> cliente = clientesRepository.findById(id_cliente);
 		if (cliente.isPresent()) {
 			clientesRepository.delete(cliente.get());
 			return "Cliente deletado com sucesso";
@@ -73,22 +53,21 @@ public class ClientesController {
 		return "Cliente não encontrado";
 	}
 	//ATUALIZANDO CLIENTES
-	@PutMapping(path="update_cliente/{idcliente}")
-	public @ResponseBody Optional<Clientes> updateClientes (@PathVariable(required = true, name = "idcliente") Long idcliente, 
+	@PutMapping(path="/update/{id_cliente}")
+	public @ResponseBody Optional<Clientes> updateClientes (@PathVariable(required = true, name = "id_cliente") Long id_cliente, 
 			@RequestBody Clientes cliente){
-		Optional<Clientes> cli = clientesRepository.findById(idcliente);
+		Optional<Clientes> cli = clientesRepository.findById(id_cliente);
 		if(cli.isPresent()) {
-			cli.get().setNOMECLIENTE(cliente.getNOMECLIENTE());
-			cli.get().setEMAILCLIENTE(cliente.getEMAILCLIENTE());
-			cli.get().setDTANASCCLIENTE(cliente.getDTANASCCLIENTE());
-			cli.get().setIDEMPRESA(cliente.getIDEMPRESA());
-			cli.get().setCPFCLIENTE(cliente.getCPFCLIENTE());
-			cli.get().setCIDADECLIENTE(cliente.getCIDADECLIENTE());
-			cli.get().setBAIRROCLIENTE(cliente.getBAIRROCLIENTE());
-			cli.get().setRUACLIENTE(cliente.getRUACLIENTE());
-			cli.get().setNUMCASACLIENTE(cliente.getNUMCASACLIENTE());
-			cli.get().setCOMPLCLIENTE(cliente.getCOMPLCLIENTE());
-			cli.get().setCONTATOCLIENTE(cliente.getCONTATOCLIENTE());
+			cli.get().setNome_cliente(cliente.getNome_cliente());
+			cli.get().setEmail_cliente(cliente.getEmail_cliente());
+			cli.get().setDtanasc_cliente(cliente.getDtanasc_cliente());
+			cli.get().setId_empresa(cliente.getId_empresa());
+			cli.get().setCpf_cliente(cliente.getCpf_cliente());
+			cli.get().setCidade_cliente(cliente.getCidade_cliente());
+			cli.get().setBairro_cliente(cliente.getBairro_cliente());
+			cli.get().setRua_cliente(cliente.getRua_cliente());
+			cli.get().setNumcasa_cliente(cliente.getNumcasa_cliente());
+			cli.get().setTelefone_cliente(cliente.getTelefone_cliente());
 			clientesRepository.save(cli.get());
 			return cli;
 		}

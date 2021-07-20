@@ -32,14 +32,14 @@ public class EmpresasController {
 	}
 	//ADICIONANDO EMPRESA
 	@PostMapping(path="/add")
-	public @ResponseBody String novaEmpresa (@RequestParam String NOMEEMPRESA, @RequestParam String EMAILEMPRESA, @RequestParam String CONTATOEMPRESA, @RequestParam String CIDADEEMPRESA, @RequestParam String RUAEMPRESA, @RequestParam String NUMEMPRESA) {
+	public @ResponseBody String novaEmpresa (@RequestParam String nome_empresa, @RequestParam String email_empresa, @RequestParam String telefone_empresa, @RequestParam String cidade_empresa, @RequestParam String rua_empresa, @RequestParam String num_empresa) {
 		Empresas empresa = new Empresas();
-		empresa.setNOMEEMPRESA(NOMEEMPRESA);
-		empresa.setEMAILEMPRESA(EMAILEMPRESA);
-		empresa.setCONTATOEMPRESA(CONTATOEMPRESA);
-		empresa.setCIDADEEMPRESA(CIDADEEMPRESA);
-		empresa.setRUAEMPRESA(RUAEMPRESA);
-		empresa.setNUMEMPRESA(NUMEMPRESA);
+		empresa.setNome_empresa(nome_empresa);
+		empresa.setEmail_empresa(email_empresa);
+		empresa.setTelefone_empresa(telefone_empresa);
+		empresa.setCidade_empresa(cidade_empresa);
+		empresa.setRua_empresa(rua_empresa);
+		empresa.setNum_empresa(num_empresa);
 		empresasRepository.save(empresa);
 		return "Valores salvos com sucesso";
 	}
@@ -50,15 +50,15 @@ public class EmpresasController {
 		return "Empresa inserida com sucesso";
 	}
 	// LOCALIZAR EMPRESA
-	@GetMapping(path ="/locate_empresa/{idempresa}")
-	public @ResponseBody Optional<Empresas> retornaEmpresa (@PathVariable(required = true,name="idempresa")
-	Long idempresa){
-		return empresasRepository.findById(idempresa);
+	@GetMapping(path ="/locate_empresa/{id_empresa}")
+	public @ResponseBody Optional<Empresas> retornaEmpresa (@PathVariable(required = true,name="id_empresa")
+	Long id_empresa){
+		return empresasRepository.findById(id_empresa);
 	}
 	// DELETANDO EMPRESA
-	@DeleteMapping(path ="delete_empresa{idempresa}")
-	public @ResponseBody String deleteEmpresa (@PathVariable(required = true, name="idempresa") Long idempresa) {
-		Optional<Empresas> empresa = empresasRepository.findById(idempresa);
+	@DeleteMapping(path ="delete_empresa{id_empresa}")
+	public @ResponseBody String deleteEmpresa (@PathVariable(required = true, name="id_empresa") Long id_empresa) {
+		Optional<Empresas> empresa = empresasRepository.findById(id_empresa);
 		if (empresa.isPresent()) {
 			empresasRepository.delete(empresa.get());
 			return "Empresa deletada com sucesso";
@@ -66,17 +66,17 @@ public class EmpresasController {
 		return "Empresa não encontrada";
 	}
 	//ATUALIZANDO EMPRESA
-	@PutMapping(path="update_empresa/{id}")
-	public @ResponseBody Optional<Empresas> updateEmpresa (@PathVariable(required = true, name = "idempresa") Long idempresa, 
+	@PutMapping(path="update_empresa/{id_empresa}")
+	public @ResponseBody Optional<Empresas> updateEmpresa (@PathVariable(required = true, name = "id_empresa") Long id_empresa, 
 			@RequestBody Empresas empresa){
-		Optional<Empresas> e = empresasRepository.findById(idempresa);
+		Optional<Empresas> e = empresasRepository.findById(id_empresa);
 		if(e.isPresent()) {
-			e.get().setEMAILEMPRESA(empresa.getEMAILEMPRESA());
-			e.get().setNOMEEMPRESA(empresa.getNOMEEMPRESA());
-			e.get().setCIDADEEMPRESA(empresa.getCIDADEEMPRESA());
-			e.get().setRUAEMPRESA(empresa.getRUAEMPRESA());
-			e.get().setNUMEMPRESA(empresa.getNUMEMPRESA());
-			e.get().setCONTATOEMPRESA(empresa.getCONTATOEMPRESA());
+			e.get().setEmail_empresa(empresa.getEmail_empresa());
+			e.get().setNome_empresa(empresa.getNome_empresa());
+			e.get().setCidade_empresa(empresa.getCidade_empresa());
+			e.get().setRua_empresa(empresa.getRua_empresa());
+			e.get().setNum_empresa(empresa.getNum_empresa());
+			e.get().setTelefone_empresa(empresa.getTelefone_empresa());
 			empresasRepository.save(e.get());
 			return e;
 		}

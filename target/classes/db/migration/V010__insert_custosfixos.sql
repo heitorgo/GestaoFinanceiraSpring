@@ -1,9 +1,9 @@
-INSERT INTO CUSTOS_FIXOS(
-	VALORCUSTOFIXO,
-    FREQUENCIACUSTO,
-    DETALHAMENTOCUSTOFIXO,
-    VERIFCUSTOFIXO,
-    IDEMPRESA
+INSERT INTO custos_fixos(
+	valor_custo_fixo,
+    frequencia_custo,
+    detalhamento_custo_fixo,
+    verif_custo_fixo,
+    id_empresa
 )
 VALUES(
 	500,

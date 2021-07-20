@@ -18,11 +18,11 @@ public class PrestacaoServicos {
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IDSERVICO;
-	private Float VALORSERVICO;
-	private String DATASERVICO;
-	private String DETALHAMENTOSERVICO;
-	private Boolean VERIFSERVICO;
-	private Long IDEMPRESA;
+	private Long id_servico;
+	private Float valor_servico;
+	private String data_servico;
+	private String detalhamento_servico;
+	private Boolean verif_servico;
+	private Long id_empresa;
 
 }
